@@ -40,6 +40,7 @@ const StyledDetails = styled.div`
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 1;
         }
         .backdrop {
             height: 100%;
@@ -58,6 +59,11 @@ const StyledDetails = styled.div`
             font-size: 3.5rem;
             text-align: center;
             z-index: 1;
+            opacity: 0;
+            transition: 0.25s opacity;
+            &.loaded {
+                opacity: 1;
+            }
             @media screen and (min-width: 1536px) {
                 font-size: 4.5rem;
             }
@@ -304,7 +310,9 @@ const Details = () => {
                     alt="movie backdrop"
                     className={"backdrop" + (!loading ? " loaded" : "")}
                 />
-                <h1 className="title">{movieData.title}</h1>
+                <h1 className={"title" + (!loading ? " loaded" : "")}>
+                    {movieData.title}
+                </h1>
             </header>
             <div className="main-details">
                 <div className="poster-container">

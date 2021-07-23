@@ -110,6 +110,11 @@ const StyledFeatured = styled.section`
                 }
                 .title {
                     font-size: 2rem;
+                    opacity: 0;
+                    transition: 0.25s;
+                    &.loaded {
+                        opacity: 1;
+                    }
                     @media screen and (min-width: 768px) {
                         font-size: 3rem;
                     }
@@ -120,6 +125,11 @@ const StyledFeatured = styled.section`
                 .overview {
                     margin-top: 1rem;
                     line-height: 175%;
+                    opacity: 0;
+                    transition: 0.25s;
+                    &.loaded {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -270,19 +280,23 @@ const Featured = () => {
                                     }
                                 />
                                 <div className="details">
-                                    {!loading ? (
-                                        <>
-                                            <h1 className="title">
-                                                {featured.title}
-                                            </h1>
-                                            {width >= 864 ? (
-                                                <p className="overview">
-                                                    {featured.overview}
-                                                </p>
-                                            ) : (
-                                                ""
-                                            )}
-                                        </>
+                                    <h1
+                                        className={
+                                            "title" +
+                                            (!loading ? " loaded" : "")
+                                        }
+                                    >
+                                        {featured.title}
+                                    </h1>
+                                    {width >= 864 ? (
+                                        <p
+                                            className={
+                                                "overview" +
+                                                (!loading ? " loaded" : "")
+                                            }
+                                        >
+                                            {featured.overview}
+                                        </p>
                                     ) : (
                                         ""
                                     )}

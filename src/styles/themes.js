@@ -1,9 +1,9 @@
 export const darkTheme = {
     name: "dark",
-    bg: "#141414",
-    bgOpacity: "#141414aa",
+    bg: "#0e0e0e",
+    bgOpacity: "#0e0e0eaa",
     bgOpacity2: "#1b1b1bef",
-    secondBg: "#1a1a1a",
+    secondBg: "#101010",
     secondBgOpacity: "#24242450",
     text: "#ffffff",
     textOpacity: "#ffffff75",
@@ -12,7 +12,7 @@ export const darkTheme = {
     accentOpacity: "#fc682325",
     skeletonColor: "#1a1a1a",
     skeletonHighlight: "#242424",
-    gradient: "linear-gradient(to top, #141414, #00000000)",
+    gradient: "linear-gradient(to top, #0e0e0e, #00000000)",
     boxShadow: "0 15px 25px #00000075",
 };
 
