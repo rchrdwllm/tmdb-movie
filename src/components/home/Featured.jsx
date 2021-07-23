@@ -192,7 +192,7 @@ const Featured = () => {
     useEffect(() => {
         const interval = setInterval(
             changeFeatured,
-            width >= 1024 ? 17000 : 5000
+            width >= 864 ? 17000 : 5000
         );
 
         return () => clearInterval(interval);

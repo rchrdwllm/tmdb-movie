@@ -1,5 +1,6 @@
-import { useWidth } from "./hooks/useWidth";
+import { Suspense, lazy } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
+import { useWidth } from "./hooks/useWidth";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./reducers";
@@ -7,12 +8,13 @@ import GlobalStyles from "./styles/globalStyles";
 import MobileNav from "./components/MobileNav";
 import DesktopNav from "./components/DesktopNav";
 import AppContainer from "./components/AppContainer";
-import Home from "./components/home/Home";
-import Genre from "./components/Genre";
-import Results from "./components/Results";
-import Details from "./components/Details";
 
 const store = createStore(allReducers);
+
+const Home = lazy(() => import("./components/home/Home"));
+const Genre = lazy(() => import("./components/Genre"));
+const Results = lazy(() => import("./components/Results"));
+const Details = lazy(() => import("./components/Details"));
 
 const App = () => {
     const width = useWidth();
@@ -23,20 +25,18 @@ const App = () => {
             <AppContainer>
                 <GlobalStyles />
                 {width < 1024 ? <MobileNav /> : <DesktopNav />}
-                <Switch location={location} key={location.pathname}>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route exact path="/genres/:name">
-                        <Genre />
-                    </Route>
-                    <Route exact path="/search/:query">
-                        <Results />
-                    </Route>
-                    <Route exact path="/movie/:id">
-                        <Details />
-                    </Route>
-                </Switch>
+                <Suspense fallback={<h1>&nbsp;</h1>}>
+                    <Switch location={location} key={location.pathname}>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/genres/:name" component={Genre} />
+                        <Route
+                            exact
+                            path="/search/:query"
+                            component={Results}
+                        />
+                        <Route exact path="/movie/:id" component={Details} />
+                    </Switch>
+                </Suspense>
             </AppContainer>
         </Provider>
     );
