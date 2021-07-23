@@ -25,7 +25,7 @@ export const useAnimations = () => {
             transition: transition,
         },
         animate: {
-            backgroundColor: currentTheme.bgOpacity2,
+            backgroundColor: currentTheme.bg,
             transition: transition,
         },
     };
