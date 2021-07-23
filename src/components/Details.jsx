@@ -255,7 +255,7 @@ const Details = () => {
 
     const fetchData = async () => {
         const { data } = await axios.get(
-            `http://api.themoviedb.org/3/movie/${id}?api_key=92e591f8bdb7a6295f41fe7f684ecdfb&append_to_response=videos`
+            `https://api.themoviedb.org/3/movie/${id}?api_key=92e591f8bdb7a6295f41fe7f684ecdfb&append_to_response=videos`
         );
 
         setMovieData(data);
