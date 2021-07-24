@@ -35,7 +35,7 @@ const Footer = () => {
     return (
         <StyledFooter>
             <p>
-                Designed and developed with 💙 by{" "}
+                Made with 💙 by{" "}
                 <a href="/#" target="_blank" rel="noreferrer">
                     Richard William.
                 </a>
