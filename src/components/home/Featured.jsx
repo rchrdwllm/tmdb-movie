@@ -190,13 +190,17 @@ const Featured = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
+        if (loading) {
+            return;
+        }
+
         const interval = setInterval(
             changeFeatured,
             width >= 864 ? 17000 : 5000
         );
 
         return () => clearInterval(interval);
-    }, [featured, currentFeatured]); // eslint-disable-line react-hooks/exhaustive-deps
+    }, [featured, currentFeatured, loading]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         const imagesLoaded = require("imagesloaded");
