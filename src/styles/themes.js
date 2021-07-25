@@ -1,7 +1,7 @@
 export const darkTheme = {
     name: "dark",
     bg: "#0e0e0e",
-    bgOpacity: "#0e0e0eaa",
+    bgOpacity: "#101010b8",
     bgOpacity2: "#1b1b1bef",
     secondBg: "#101010",
     secondBgOpacity: "#24242450",
@@ -19,7 +19,7 @@ export const darkTheme = {
 export const lightTheme = {
     name: "light",
     bg: "#f5f5f5",
-    bgOpacity: "#f5f5f5aa",
+    bgOpacity: "#fafafabf",
     bgOpacity2: "#fbfbfbdd",
     secondBg: "#fafafa",
     secondBgOpacity: "#ffffff75",
