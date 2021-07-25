@@ -62,6 +62,7 @@ const StyledFeatured = styled.section`
         margin-top: 2rem;
         flex-wrap: nowrap;
         width: 100%;
+        will-change: transform;
         transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
         a {
             position: relative;

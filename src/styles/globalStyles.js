@@ -22,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Inter';
+        will-change: color, background-color;
         transition: 0.05s color, 0.25s background-color;
         &::-webkit-scrollbar {
             display: none;
@@ -40,6 +41,7 @@ const GlobalStyles = createGlobalStyle`
         img {
             width: 100%;
             transition: 0.5s opacity;
+            will-change: opacity;
         }
         button, input {
             border: none;

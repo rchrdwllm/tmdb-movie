@@ -17,6 +17,7 @@ const StyledNav = styled(motion.nav)`
     background-color: var(--bg-opacity);
     backdrop-filter: blur(25px) saturate(180%);
     border-bottom: 1px solid var(--text-opacity-2);
+    will-change: height, color, background-color;
     transition: none;
     .shown {
         height: 10vh;
