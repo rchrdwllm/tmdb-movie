@@ -150,6 +150,17 @@ const MobileNav = () => {
                                 Home
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                exact
+                                to="/people"
+                                className="nav-link"
+                                activeClassName="active-link"
+                                onClick={() => setOpen(false)}
+                            >
+                                People
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
                 <div className="menu">
