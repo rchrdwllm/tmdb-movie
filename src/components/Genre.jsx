@@ -130,6 +130,10 @@ const Genre = () => {
                     (genre) => genre.name.toLowerCase() === name.toLowerCase()
                 )[0].id
             );
+
+            document.title = `${
+                name.charAt(0).toUpperCase() + name.slice(1)
+            } | Movie Search`;
         }
     }, [genres, name]); // eslint-disable-line react-hooks/exhaustive-deps
 

@@ -114,6 +114,8 @@ const People = () => {
 
     useEffect(() => {
         fetchPeople();
+
+        document.title = "People | Movie Search";
     }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (

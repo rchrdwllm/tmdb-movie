@@ -168,6 +168,8 @@ const Person = () => {
         // data.movie_credits.cast.splice(20);
 
         setPersonData(data);
+
+        document.title = `${data.name} | Movie Search`;
     };
 
     useEffect(() => {
@@ -212,22 +214,28 @@ const Person = () => {
             <div className="main-details">
                 <h1 className="name">{personData.name}</h1>
                 <p className={"biography" + (shouldShow ? " shown" : "")}>
-                    {personData.biography}
+                    {personData.biography
+                        ? personData.biography
+                        : "No biography provided."}
                 </p>
-                <button
-                    className="see-more"
-                    onClick={() => setShouldShow(!shouldShow)}
-                >
-                    See {shouldShow ? "less" : "more"}...
-                </button>
+                {personData.biography ? (
+                    <button
+                        className="see-more"
+                        onClick={() => setShouldShow(!shouldShow)}
+                    >
+                        See {shouldShow ? "less" : "more"}...
+                    </button>
+                ) : (
+                    ""
+                )}
             </div>
             <div className="movie">
                 <h1 className="movie-heading">Known for:</h1>
                 <div className="movie-container">
                     {personData.movie_credits.cast.map(
-                        ({ title, poster_path, id, genre_ids }) => (
+                        ({ title, poster_path, id, genre_ids }, i) => (
                             <Movie
-                                key={title}
+                                key={i}
                                 id={id}
                                 title={title}
                                 poster={poster_path}

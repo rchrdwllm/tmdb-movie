@@ -30,6 +30,8 @@ const StyledDiscover = styled.div`
 const Discover = () => {
     const width = useWidth();
 
+    document.title = "Discover | Movie Search";
+
     return (
         <StyledDiscover>
             {width >= 1024 ? <TopBar /> : ""}

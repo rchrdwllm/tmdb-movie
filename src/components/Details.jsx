@@ -253,6 +253,8 @@ const Details = () => {
         );
 
         setMovieData(data);
+
+        document.title = `${data.title} | Movie Search`;
     };
 
     const fetchCast = async () => {
