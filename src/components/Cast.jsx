@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { NavLink } from "react-router-dom";
 
 const StyledCast = styled.div`
     .cast-img-container {
@@ -52,6 +53,8 @@ const Cast = ({ name, profile, character, id }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
+
         const imagesLoaded = require("imagesloaded");
         const images = document.querySelectorAll("img");
 

@@ -84,6 +84,8 @@ const Movie = ({ id, title, poster, genreIds }) => {
     };
 
     useEffect(() => {
+        setLoading(true);
+
         const imagesLoaded = require("imagesloaded");
         const images = document.querySelectorAll("img");
 
