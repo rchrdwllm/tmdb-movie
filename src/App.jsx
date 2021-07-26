@@ -17,6 +17,7 @@ const Genre = lazy(() => import("./components/Genre"));
 const Results = lazy(() => import("./components/Results"));
 const Details = lazy(() => import("./components/Details"));
 const People = lazy(() => import("./components/People"));
+const Person = lazy(() => import("./components/Person"));
 
 const App = () => {
     const width = useWidth();
@@ -38,6 +39,11 @@ const App = () => {
                         />
                         <Route exact path="/movie/:id" component={Details} />
                         <Route exact path="/people" component={People}></Route>
+                        <Route
+                            exact
+                            path="/people/:id"
+                            component={Person}
+                        ></Route>
                     </Switch>
                 </Suspense>
             </AppContainer>
