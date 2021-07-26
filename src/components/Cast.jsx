@@ -4,47 +4,51 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { NavLink } from "react-router-dom";
 
 const StyledCast = styled.div`
-    .cast-img-container {
-        position: relative;
+    a {
+        height: 100%;
         width: 100%;
-        .skeleton-cast {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .cast-img-container {
+            position: relative;
             width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            z-index: 1;
-        }
-        .cast-img {
-            opacity: 0;
-            &.loaded {
+            .skeleton-cast {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
                 border-radius: 16px;
-                opacity: 1;
+                z-index: 1;
+            }
+            .cast-img {
+                opacity: 0;
+                border-radius: 16px;
+                &.loaded {
+                    opacity: 1;
+                }
             }
         }
-    }
-    .no-cast-img {
-        height: 85%;
-        width: 100%;
-        background-color: var(--skeleton-color);
-        border-radius: 16px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h1 {
-            color: var(--text);
+        .no-cast-img {
+            height: 85%;
+            width: 100%;
+            background-color: var(--skeleton-color);
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h1 {
+                color: var(--text);
+            }
         }
-    }
-    .cast-details {
-        height: 1fr;
-        margin-top: 1rem;
-        .name {
-            font-size: 1rem;
-        }
-        .character {
-            margin-top: 0.5rem;
-            color: var(--text-opacity);
+        .cast-details {
+            height: 1fr;
+            margin-top: 1rem;
+            .name {
+                font-size: 1rem;
+            }
+            .character {
+                margin-top: 0.5rem;
+                color: var(--text-opacity);
+            }
         }
     }
 `;
