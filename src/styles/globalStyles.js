@@ -44,6 +44,7 @@ const GlobalStyles = createGlobalStyle`
             will-change: opacity;
         }
         button, input {
+            background-color: transparent;
             border: none;
             outline: none;
             font-size: inherit;
