@@ -50,6 +50,8 @@ const TopBar = ({ genreName, movieTitle }) => {
                     ? "Search"
                     : location.pathname === "/"
                     ? "Discover"
+                    : location.pathname === "/people"
+                    ? "People"
                     : movieTitle
                     ? movieTitle
                     : genreName
