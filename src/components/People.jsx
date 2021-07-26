@@ -118,13 +118,7 @@ const People = () => {
 
     return (
         <StyledPeople>
-            {width >= 1024 ? (
-                <TopBar
-                    genreName={name.charAt(0).toUpperCase() + name.slice(1)}
-                />
-            ) : (
-                ""
-            )}
+            {width >= 1024 ? <TopBar /> : ""}
             {width < 1024 ? <h1 className="heading">People</h1> : ""}
             <div className="controls">
                 <button
@@ -150,18 +144,15 @@ const People = () => {
                         }
                     }}
                 ></button>
-                <div className="person-container">
-                    {results.map(({ name, id, profile_path }, i) => (
-                        <Cast
-                            key={i}
-                            id={id}
-                            name={name}
-                            profile={profile_path}
-                        />
-                    ))}
-                </div>
-                <Footer />
             </div>
+            <div className="person-container">
+                {people.map(({ name, id, profile_path }, i) => (
+                    <Cast key={i} id={id} name={name} profile={profile_path} />
+                ))}
+            </div>
+            <Footer />
         </StyledPeople>
     );
 };
+
+export default People;
