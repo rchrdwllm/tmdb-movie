@@ -59,7 +59,7 @@ const StyledFeatured = styled.section`
                 }
                 @media screen and (min-width: 360px) {
                     width: 5px;
-                    height: 7px;
+                    height: 5px;
                     margin: 0 0.5rem;
                 }
             }
