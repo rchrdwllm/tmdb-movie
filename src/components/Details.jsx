@@ -203,17 +203,11 @@ const StyledDetails = styled.div`
             padding: 0 3rem 3rem;
             margin-top: 5rem;
         }
-        @media screen and (min-width: 864px) {
-            gap: 2rem;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
         @media screen and (min-width: 1024px) {
-            grid-template-columns: 1fr 1fr;
             margin-top: 7rem;
         }
         @media screen and (min-width: 1280px) {
             padding: 0 5rem 5rem;
-            grid-template-columns: 1fr 1fr 1fr;
         }
         @media screen and (min-width: 1536px) {
             padding: 0 7rem 7rem;
@@ -395,6 +389,7 @@ const Details = () => {
                                 name={name}
                                 profile={profile_path}
                                 character={character}
+                                id={id}
                             />
                         ))}
                     </div>
