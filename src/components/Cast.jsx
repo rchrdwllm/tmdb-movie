@@ -93,7 +93,7 @@ const Cast = ({ name, profile, character }) => {
             )}
             <div className="cast-details">
                 <h1 className="name">{name}</h1>
-                <p className="character">{character}</p>
+                {character ? <p className="character">{character}</p> : ""}
             </div>
         </StyledCast>
     );
