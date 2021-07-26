@@ -20,7 +20,7 @@ const StyledFeatured = styled.section`
             position: relative;
             background-color: var(--second-bg);
             border-radius: 50%;
-            padding: 1.5rem;
+            padding: 1.25rem;
             cursor: pointer;
             &:hover {
                 background-color: var(--accent);
@@ -31,6 +31,9 @@ const StyledFeatured = styled.section`
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+            }
+            @media screen and (min-width: 360px) {
+                padding: 1.5rem;
             }
             &.prev::before {
                 content: "<";
@@ -44,7 +47,7 @@ const StyledFeatured = styled.section`
             justify-content: center;
             align-items: center;
             .indicator {
-                margin: 0 0.5rem;
+                margin: 0 0.25rem;
                 background-color: var(--skeleton-color);
                 width: 7px;
                 height: 7px;
@@ -53,6 +56,11 @@ const StyledFeatured = styled.section`
                 cursor: pointer;
                 &.active-indicator {
                     background-color: var(--text);
+                }
+                @media screen and (min-width: 360px) {
+                    width: 5px;
+                    height: 7px;
+                    margin: 0 0.5rem;
                 }
             }
         }
