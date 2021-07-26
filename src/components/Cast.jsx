@@ -48,7 +48,7 @@ const StyledCast = styled.div`
     }
 `;
 
-const Cast = ({ name, profile, character }) => {
+const Cast = ({ name, profile, character, id }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -62,39 +62,41 @@ const Cast = ({ name, profile, character }) => {
 
     return (
         <StyledCast>
-            <div className="cast-img-container">
-                <SkeletonTheme
-                    color="var(--skeleton-color)"
-                    highlightColor="var(--skeleton-highlight)"
-                >
-                    {loading ? (
-                        <Skeleton className="skeleton-cast"></Skeleton>
+            <NavLink exact to={`/people/${id}`}>
+                <div className="cast-img-container">
+                    <SkeletonTheme
+                        color="var(--skeleton-color)"
+                        highlightColor="var(--skeleton-highlight)"
+                    >
+                        {loading ? (
+                            <Skeleton className="skeleton-cast"></Skeleton>
+                        ) : (
+                            ""
+                        )}
+                    </SkeletonTheme>
+                    {profile ? (
+                        <img
+                            src={`https://image.tmdb.org/t/p/w185${profile}`}
+                            alt="cast"
+                            className={"cast-img " + (!loading ? "loaded" : "")}
+                            loading="lazy"
+                        />
                     ) : (
                         ""
                     )}
-                </SkeletonTheme>
-                {profile ? (
-                    <img
-                        src={`https://image.tmdb.org/t/p/w185${profile}`}
-                        alt="cast"
-                        className={"cast-img " + (!loading ? "loaded" : "")}
-                        loading="lazy"
-                    />
+                </div>
+                {!profile ? (
+                    <div className="no-cast-img">
+                        <h1>No image</h1>
+                    </div>
                 ) : (
                     ""
                 )}
-            </div>
-            {!profile ? (
-                <div className="no-cast-img">
-                    <h1>No image</h1>
+                <div className="cast-details">
+                    <h1 className="name">{name}</h1>
+                    {character ? <p className="character">{character}</p> : ""}
                 </div>
-            ) : (
-                ""
-            )}
-            <div className="cast-details">
-                <h1 className="name">{name}</h1>
-                {character ? <p className="character">{character}</p> : ""}
-            </div>
+            </NavLink>
         </StyledCast>
     );
 };
