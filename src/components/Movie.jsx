@@ -41,8 +41,8 @@ const StyledMovie = styled(motion.div)`
             height: 100%;
             object-fit: cover;
             opacity: 0;
+            border-radius: 16px;
             &.loaded {
-                border-radius: 16px;
                 opacity: 1;
             }
         }
